@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pers.lyz.dao.GoodsDAO">
+
+    <resultMap id="goodsMap" type="pers.lyz.model.Goods">
+        <id property="gId" column="g_id"/>
+        <result property="gName" column="g_name"/>
+        <result property="gPrice" column="g_price"/>
+        <result property="gNumber" column="g_number"/>
+        <result property="gState" column="g_state"/>
+        <result property="gDate" column="g_date"/>
+    </resultMap>
+
+    <!--查询所有-->
+    <select id="findAll" resultMap="goodsMap">
+        SELECT g_id,g_name,g_price,g_number,g_state,g_date FROM goods
+    </select>
+
+    <!--通过ID查询单个-->
+    <select id="findById" resultMap="goodsMap">
+        SELECT g_id,g_name,g_price,g_number,g_state,g_date FROM goods
+        WHERE g_id like "'%"#{id}"%'"
+    </select>
+
+    <!--分页查询-->
+    <select id="findByPage" resultMap="goodsMap">
+        SELECT g_id,g_name,g_price,g_number,g_state,g_date FROM goods
+    </select>
+
+    <!--分页条件查询-->
+    <select id="findByTj" resultMap="goodsMap">
+        SELECT g_id,g_name,g_price,g_number,g_state,g_date FROM goods
+        where 1
+        <if test="gId != null and gId!=''">
+            and   g_id  like "%"#{gId}"%"
+        </if>
+    </select>
+
+    <!--新增-->
+    <insert id="insert">
+        INSERT INTO goods(g_id,g_name,g_price,g_number,g_state,g_date)
+        VALUES (#{g.gId},#{g.gName},#{g.gPrice},#{g.gNumber},#{g.gState},#{g.gDate})
+    </insert>
+
+    <!--修改-->
+    <update id="update">
+        UPDATE goods SET g_name=#{gName},g_price=#{gPrice},g_number=#{gNumber},g_state=#{gState},g_date=#{gDate}
+        WHERE g_id=#{gId}
+    </update>
+
+    <!--通过ID删除单个-->
+    <delete id="deleteById">
+        DELETE FROM goods
+        WHERE g_id=#{id}
+    </delete>
+
+</mapper>
