@@ -16,12 +16,6 @@
         SELECT g_id,g_name,g_price,g_number,g_state,g_date FROM goods
     </select>
 
-    <!--通过ID查询单个-->
-    <select id="findById" resultMap="goodsMap">
-        SELECT g_id,g_name,g_price,g_number,g_state,g_date FROM goods
-        WHERE g_id like "'%"#{id}"%'"
-    </select>
-
     <!--分页查询-->
     <select id="findByPage" resultMap="goodsMap">
         SELECT g_id,g_name,g_price,g_number,g_state,g_date FROM goods
