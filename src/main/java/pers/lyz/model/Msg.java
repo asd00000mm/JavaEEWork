@@ -1,12 +1,13 @@
 package pers.lyz.model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * 通用的返回类
  */
-public class Msg {
+public class Msg implements Serializable {
     //状态码
     private int code;
     //提示信息
@@ -19,10 +20,11 @@ public class Msg {
      */
     private Map<String,Object> extend = new HashMap<String,Object>();
 
-    public static Msg success(){
+    public static Msg success(Long l){
         Msg result = new Msg();
         result.setCode(0);
         result.setMsg("处理成功");
+        result.setCount(l);
         return result;
     }
 

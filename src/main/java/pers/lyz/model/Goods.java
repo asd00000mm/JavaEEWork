@@ -2,13 +2,14 @@ package pers.lyz.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  */
 @Data
-public class Goods {
+public class Goods implements Serializable {
     /**
      *
      */

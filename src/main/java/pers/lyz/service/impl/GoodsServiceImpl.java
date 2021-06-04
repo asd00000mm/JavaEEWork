@@ -23,7 +23,6 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public List<Goods> findByTj(int pageNum, int pageSize, String gid) {
-        PageHelper.startPage(pageNum, pageSize);
         return goodsDAO.findByTj(gid);
     }
 

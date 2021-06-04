@@ -33,17 +33,16 @@ public class GoodsController {
                                       @ApiParam("每页大小") @RequestParam(defaultValue = "10") Integer pageSize,String gid) {
         List<Goods> list= goodsService.findByTj(pageNum, pageSize,gid);
         PageInfo pageInfo=new PageInfo(list);
-        Msg msg = new Msg();
-        msg.setCount(pageInfo.getTotal());
-        msg.add("list",list);
-        return msg;
+        return Msg.success(pageInfo.getTotal()).add("list",list);
     }
+
 
     @PostMapping("/insert")
     @ApiOperation("新增")
     public Map<String, Object> insert(@RequestBody Goods goods) {
         map.clear();
         try {
+            System.out.println(goods);
             goodsService.insert(goods);
             map.put("msg",1);
         } catch (Exception e) {
