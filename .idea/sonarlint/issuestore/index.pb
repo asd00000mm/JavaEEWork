@@ -185,7 +185,7 @@ W
 'src/main/java/pers/lyz/Application.java,1\c\1c0f763f94e3ac8c76937ff2c0dc865a8c7f6264
 a
 1src/main/java/pers/lyz/config/Swagger2Config.java,5\d\5d92ed8c71b9c826f75199d8df0321d8aa14ef91
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-`
-0src/main/java/pers/lyz/service/GoodsService.java,d\f\dfe3b9d18fddf6d2e661671dd7c8b0bd8ca7da48
+W
+'src/main/java/pers/lyz/model/Goods.java,5\d\5db5e88d5fa5011bc5318825bc61559e47f816d0
+i
+9src/main/java/pers/lyz/service/impl/GoodsServiceImpl.java,5\4\54c3d381159d08cbbcfd3d0e710797ecbc2e1e21

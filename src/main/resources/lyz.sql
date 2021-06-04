@@ -11,7 +11,7 @@
  Target Server Version : 50728
  File Encoding         : 65001
 
- Date: 03/06/2021 19:32:08
+ Date: 04/06/2021 22:58:54
 */
 
 SET NAMES utf8mb4;
@@ -37,6 +37,22 @@ CREATE TABLE `goods`  (
 -- ----------------------------
 INSERT INTO `goods` VALUES ('001', 'iPhone12', 111.00, 10000, '有货', '2021-06-02 00:34:09');
 INSERT INTO `goods` VALUES ('002', 'ipad2020', 3000.00, 5000, '有货', '2021-06-02 00:34:53');
-INSERT INTO `goods` VALUES ('003', '华为', 1111.00, 222, '有货', '2021-06-03 14:11:22');
+INSERT INTO `goods` VALUES ('004', '戴尔G3', 66.00, 111111, '有货', '2021-06-04 12:34:17');
+
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user`  (
+  `id` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `username` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `password` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES ('001', 'admin', '123456');
 
 SET FOREIGN_KEY_CHECKS = 1;

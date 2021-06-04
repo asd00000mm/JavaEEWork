@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pers.lyz.dao.UserDAO">
+
+    <resultMap id="userMap" type="pers.lyz.model.User">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
+    <!--查询所有-->
+    <select id="login" resultMap="userMap">
+        SELECT id,username,password FROM user
+        where username=#{username} and password=#{password}
+    </select>
+    
+    
+</mapper>
